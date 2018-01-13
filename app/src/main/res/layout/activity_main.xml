@@ -1,18 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.siomt.ttmusic.MainActivity">
 
     <TextView
+        android:id="@+id/current_music"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="#00000000"
+        android:text="this is Textview"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Gallery
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/current_music"
+        android:layout_centerVertical="true"
+        android:spacing="16dp">
+
+
+    </Gallery>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_seek_bar"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/collect"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/collect" />
+
+        <ImageButton
+            android:id="@+id/download"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/download" />
+
+        <ImageButton
+            android:id="@+id/comment"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/comment" />
+
+        <ImageButton
+            android:id="@+id/more"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/more" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/ll_bottom">
+
+        <TextView
+            android:id="@+id/current_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/current_time_text"
+            android:layout_toStartOf="@+id/end_time_text"
+            android:max="100"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:progress="0"
+            android:secondaryProgress="0" />
+
+        <TextView
+            android:id="@+id/end_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="00:00" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/bt_start"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/start" />
+
+        <ImageButton
+            android:id="@+id/pause"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/pause" />
+
+        <ImageButton
+            android:id="@+id/before"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/before" />
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/next" />
+
+        <ImageButton
+            android:id="@+id/btStop"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/stop" />
+
+        <ImageButton
+            android:id="@+id/list_play"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/list_play" />
+
+        <ImageButton
+            android:id="@+id/player"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/random" />
+
+        <ImageButton
+            android:id="@+id/bt_return"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="#00000000"
+            android:src="@drawable/circulation" />
+
+    </LinearLayout>
+
+</RelativeLayout>
